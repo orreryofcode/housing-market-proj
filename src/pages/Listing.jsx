@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { getDoc, doc, collectionGroup } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { getAuth } from "firebase/auth";
 import Spinner from "../components/Spinner";
@@ -45,7 +45,7 @@ function Listing() {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
-        navigation
+        // navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         style={{ height: "300px" }}>
@@ -85,7 +85,8 @@ function Listing() {
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             : listing.regularPrice
                 .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+          {listing.type === "rent" && " / Month"}
         </p>
 
         <p className='listingLocation'>{listing.location}</p>

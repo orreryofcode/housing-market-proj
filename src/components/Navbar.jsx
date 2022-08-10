@@ -28,7 +28,7 @@ function Navbar() {
               className={
                 pathMatchRoute("/")
                   ? "navbarListItemNameActive"
-                  : "navbarListName"
+                  : "navbarListItemName"
               }>
               Explore
             </p>
@@ -43,7 +43,7 @@ function Navbar() {
               className={
                 pathMatchRoute("/offers")
                   ? "navbarListItemNameActive"
-                  : "navbarListName"
+                  : "navbarListItemName"
               }>
               Offers
             </p>
@@ -58,7 +58,7 @@ function Navbar() {
               className={
                 pathMatchRoute("/profile")
                   ? "navbarListItemNameActive"
-                  : "navbarListName"
+                  : "navbarListItemName"
               }>
               Profile
             </p>
